@@ -1,1 +1,11 @@
-This is the first file.
+
+Run following commands to compile and boot photon:
+make in src folder
+./setup_floppy.sh
+./system_boot.sh
+
+
+Note:
+creating new floppy image:
+$ dd bs=512 count=2880 if=/dev/zero of=imagefile.img
+$ mkfs.msdos imagefile.img
