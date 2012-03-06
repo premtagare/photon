@@ -5,6 +5,18 @@ make in src folder
 ./system_boot.sh
 
 
+2nd Version of Bootloader:
+An independent assembly code(first_process.s) is compiled. This code is being executed by placing it in 2nd half(256) of MBR(512).
+second_process.s file is initial version of second process. Currently this can be executed just like bootloader.
+commands:
+cd src
+make
+dd if=first_process.o of=boot_loader.o ibs=1 obs=1 seek=256 count=70 conv=notrunc
+cd ..
+./setup_floppy.sh
+./system_boot.sh
+
+
 Note:
 creating new floppy image:
 $ dd bs=512 count=2880 if=/dev/zero of=imagefile.img

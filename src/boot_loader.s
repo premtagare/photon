@@ -10,13 +10,26 @@ start:
 	mov ds, ax
 
 
+;	mov ah,0Eh		; print A and B on screen
+;        mov al,65		; this should check it now
+;        int 10h
+;        mov al,66
+;        int 10h	
+
+;	mov cx,005Eh            ; delay for few micro seconds
+;        mov dx,8480h
+;        mov ah,86h
+;        int 15h
+
 	mov si, text_string	; Put string position into SI
 	call print_string	; Call our string-printing routine
+	
+	
 
-	jmp $			; Jump here - infinite loop!
+	jmp 0x07C0:0x100		; Jump to first process.
 
 
-	text_string db 'I am awake now, give me a minute I will load OS :-)', 0
+	text_string db 'I am awake now, give me a minute I will load OS :-) ', 0
 
 print_string:			; Routine: output string in SI to screen
 	mov ah, 0Eh		; int 10h 'print char' function
