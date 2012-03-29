@@ -1,0 +1,31 @@
+Memory map
+-----------
+
+0x000000
+Interrupts set up by BIOS.
+
+0x007C00
+boot_loader
+0x007E00
+boot_loader stack
+0x008E00
+
+
+0x010000
+first_process
+ds set to 0x010000
+0x015000
+stack of first process; set sp = 0x5000  (5 4K pages).
+0x01A000
+
+0x020000
+second_process
+ds set to 0x020000
+0x025000
+stack of second process; set sp = 0x5000  (5 4K pages).
+0x02A000
+
+0x100000
+
+
+
