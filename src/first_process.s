@@ -3,20 +3,15 @@ BITS 16
 ;ORG 07D0h
 
 first_process:
-	mov ax, 07D0h		; set ds to address 2nd half of MBR 
-	mov ds, ax		 
-;	mov ss, ax		; setting stack segment
-;	mov sp, 005000h
+	mov ax, 1000h		; 
+	mov ds, ax
+	mov ax, 1500h		 
+	mov ss, ax		; setting stack segment
+	mov sp, 5000h
 
 
 .fstprmsgprint:	
 	
-;        mov ah,0Eh		; print A and B
-;        mov al,65
-;        int 10h
-;        mov al,66
-;        int 10h
-
 	mov si, fstpr_text_string	; Put string position into SI
 	call fstpr_print_string	; Call our string-printing routine
         

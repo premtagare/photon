@@ -17,6 +17,15 @@ cd ..
 ./system_boot.sh
 
 
+3rd Version of Bootloader:
+Two processes are placed into memory(RAM) through floppy by bootloader.
+commands:
+cd src
+make
+./setup_floppy.sh
+./system_boot.sh
+
+
 Note:
 creating new floppy image:
 $ dd bs=512 count=2880 if=/dev/zero of=imagefile.img

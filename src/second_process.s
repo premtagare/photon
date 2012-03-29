@@ -1,12 +1,13 @@
 BITS 16
 ;ORG 10000
-ORG 07C00h
+;ORG 07C00h
 
 second_process:
-;	mov ax, 010000h		; 
-;	mov ds, ax		; setting data segment
-;	mov ss, ax		; setting stack segment
-	mov sp, 005000h
+	mov ax, 2000h		; 
+	mov ds, ax		; setting data segment
+	mov ax, 2500h
+	mov ss, ax		; setting stack segment
+	mov sp, 5000h
 
 
 .scndprmsgprint:	
