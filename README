@@ -25,6 +25,12 @@ make
 ./setup_floppy.sh
 ./system_boot.sh
 
+4th Version:
+Multitasking is accomplished in real mode. New timer interrupt is defined(mytmr) which takes care of task switching.
+commands:
+cd src
+make
+./run
 
 Note:
 creating new floppy image:
